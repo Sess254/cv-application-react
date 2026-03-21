@@ -1,17 +1,19 @@
 import { useState } from "react";
 
 function EducationInfo() {
-
-    const [editmode, setEditMode] = useState(true);
+    const [ediMode, setEditMode] = useState(true);
     const [formData, setFormData] = useState({
-        fullName: "",
-        email: "",
-        phoneNumber: "",
+        school: "",
+        course: "",
+        date: "",
     });
 
-    
-    
-
+    const handleChange = (e) => {
+        const {name, value} = e.value;
+        setFormData(prevData => (
+            {...prevData, [name]: value}
+        ));
+    }
 }
 
 
