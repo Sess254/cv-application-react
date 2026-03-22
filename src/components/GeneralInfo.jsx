@@ -7,6 +7,7 @@ function GeneralInfo() {
         fullName: "",
         email: "",
         phoneNumber: "",
+        description: "",
     });
 
     const handleChange = (e) => {
@@ -55,6 +56,19 @@ function GeneralInfo() {
                     required
                     placeholder="123-456-7890"
                 />
+                <label htmlFor="description">Description about yourself</label>
+                <textarea 
+                    name="description" 
+                    id="description"
+                    required
+                    onChange={handleChange}
+                    cols="50"
+                    rows="4"
+                    placeholder="Type something..."
+                    value={formData.description}
+                    >
+
+                    </textarea>
                 <button className="save" type="submit">Save</button>
                 <hr />
             </form>
@@ -63,10 +77,10 @@ function GeneralInfo() {
                     <p><strong>Full Name: </strong> {formData.fullName}</p>
                     <p><strong>Email:</strong> {formData.email}</p>
                     <p><strong>Tel:</strong> {formData.phoneNumber}</p>
+                    <p><strong>Description: </strong>{formData.description}</p>
                     <button className="edit" onClick={() => setEditMode(true)}>Edit</button>
                     <hr />
                 </div>
-
             )}
         </div>
     )
